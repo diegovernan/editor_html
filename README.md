@@ -1,2 +1,1 @@
-# editor_html
-Editor HTML, CSS e JavaScript
+# Editor HTML, CSS e JavaScript
