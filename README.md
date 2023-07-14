@@ -1,1 +1,1 @@
-# Editor HTML, CSS e JavaScript
+# Google Calendar package for Laravel
