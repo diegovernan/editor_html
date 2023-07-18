@@ -17,9 +17,9 @@ class EventCollection extends Collection
 	 * @param Event $event
 	 * @param array $items
 	 */
-	public function __construct( $items = [], Event $event = null )
+	public function __construct($items = [], Event $event = null)
 	{
-		parent::__construct( $items );
+		parent::__construct($items);
 		$this->event = $event;
 	}
 

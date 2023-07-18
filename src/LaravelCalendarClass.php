@@ -71,5 +71,4 @@ class LaravelCalendarClass extends CalendarConnection
 		$this->revokeToken();
 		$this->deleteAccessToken();
 	}
-
 }

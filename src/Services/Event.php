@@ -10,7 +10,6 @@ use Google_Service_Calendar;
 
 class Event
 {
-
 	use SendsParameters,
 		Filterable;
 
@@ -71,7 +70,7 @@ class Event
 
 		$events = [];
 		$response = $this->getEventsResponse();
-		$this->pageToken = method_exists( $response, 'getNextPageToken' ) ? $response->getNextPageToken() : null;
+		$this->pageToken = method_exists($response, 'getNextPageToken') ? $response->getNextPageToken() : null;
 
 		$allEvents = $response->getItems();
 
@@ -180,7 +179,7 @@ class Event
 	 */
 	private function getRequest($id)
 	{
-        return $this->service->events->get('primary', $id);
+		return $this->service->events->get('primary', $id);
 	}
 
 	/**
@@ -189,10 +188,10 @@ class Event
 	 */
 	private function getEventsResponse()
 	{
-        $responseOrRequest = $this->service->events->listEvents('primary', $this->params);
+		$responseOrRequest = $this->service->events->listEvents('primary', $this->params);
 
-		if ( get_class( $responseOrRequest ) === "GuzzleHttp\Psr7\Request" ) {
-			$response = $this->service->getClient()->execute( $responseOrRequest, 'Google_Service_Calendar_EventResponse' );
+		if (get_class($responseOrRequest) === "GuzzleHttp\Psr7\Request") {
+			$response = $this->service->getClient()->execute($responseOrRequest, 'Google_Service_Calendar_EventResponse');
 
 			return $response;
 		}

@@ -6,9 +6,7 @@ use DiegoVernan\LaravelCalendar\Services\Event;
 
 trait Filterable
 {
-	
-	public abstract function add( $query, $column = 'q', $encode = true );
-
+	public abstract function add($query, $column = 'q', $encode = true);
 
 	/**
 	 * Filter to get only emails after a specific date
@@ -17,9 +15,9 @@ trait Filterable
 	 *
 	 * @return self|Event
 	 */
-	public function after( $date )
+	public function after($date)
 	{
-		$this->add( "after:{$date}" );
+		$this->add("after:{$date}");
 
 		return $this;
 	}
@@ -31,12 +29,10 @@ trait Filterable
 	 *
 	 * @return self|Event
 	 */
-	public function before( $date )
+	public function before($date)
 	{
-		$this->add( "before:{$date}" );
+		$this->add("before:{$date}");
 
 		return $this;
 	}
-
-	
 }

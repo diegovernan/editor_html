@@ -12,7 +12,6 @@ use Illuminate\Support\Arr;
  */
 trait Configurable
 {
-
 	protected $additionalScopes = [];
 	private $_config;
 
@@ -42,7 +41,6 @@ trait Configurable
 			} else {
 				return $config;
 			}
-
 		}
 
 		return null;
@@ -136,5 +134,4 @@ trait Configurable
 	public abstract function setAccessType($type);
 
 	public abstract function setApprovalPrompt($approval);
-
 }

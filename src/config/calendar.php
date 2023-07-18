@@ -1,7 +1,6 @@
 <?php
 
 return [
-
 	/*
 	|--------------------------------------------------------------------------
 	| Calendar Configuration
@@ -45,9 +44,7 @@ return [
 	|
 	*/
 
-	'additional_scopes' => [
-
-	],
+	'additional_scopes' => [],
 
 	'access_type' => 'offline',
 

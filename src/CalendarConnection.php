@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Storage;
 
 class CalendarConnection extends Google_Client
 {
-
 	use Configurable {
 		__construct as configConstruct;
 	}
@@ -41,7 +40,6 @@ class CalendarConnection extends Google_Client
 		if ($this->checkPreviouslyLoggedIn()) {
 			$this->refreshTokenIfNeeded();
 		}
-
 	}
 
 	/**
@@ -63,7 +61,6 @@ class CalendarConnection extends Google_Client
 			}
 
 			return !empty($savedConfigToken['access_token']);
-
 		}
 
 		return false;
@@ -160,7 +157,7 @@ class CalendarConnection extends Google_Client
 				} else {
 					$savedConfigToken = json_decode($disk->get($file), true);
 				}
-				if(isset( $savedConfigToken['email'])) {
+				if (isset($savedConfigToken['email'])) {
 					$config['email'] = $savedConfigToken['email'];
 				}
 			}
@@ -173,7 +170,6 @@ class CalendarConnection extends Google_Client
 		} else {
 			$disk->put($file, json_encode($config));
 		}
-
 	}
 
 	/**
@@ -187,9 +183,9 @@ class CalendarConnection extends Google_Client
 			$code = (string) $request->input('code', null);
 			if (!is_null($code) && !empty($code)) {
 				$accessToken = $this->fetchAccessTokenWithAuthCode($code);
-				if($this->haveReadScope()) {
+				if ($this->haveReadScope()) {
 					$profileEvents = $this->getProfile();
-					if(is_array($profileEvents)){
+					if (is_array($profileEvents)) {
 						$accessToken['email'] = $this->emailAddress;
 					}
 				}
@@ -261,7 +257,6 @@ class CalendarConnection extends Google_Client
 		} else {
 			$disk->put($file, json_encode([]));
 		}
-
 	}
 
 	private function haveReadScope()
@@ -270,5 +265,4 @@ class CalendarConnection extends Google_Client
 
 		return in_array(Google_Service_Calendar::CALENDAR_EVENTS, $scopes);
 	}
-
 }

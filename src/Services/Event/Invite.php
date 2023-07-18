@@ -15,7 +15,6 @@ use Illuminate\Support\Collection;
  */
 class Invite extends CalendarConnection
 {
-
 	/**
 	 * @var
 	 */
@@ -119,5 +118,4 @@ class Invite extends CalendarConnection
 
 		return $this;
 	}
-
 }
